@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	before_action :set_product, only: [:show, :edit, :update, :inventory, :description]
+	before_action :set_product, only: [:show, :edit, :update, :inventory, :description]#this was the differences
 
 	def description
 		render plain: @product.description
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
 private
 
 	def set_product
-		@product = Product.find(params[:id])
+		@product = Product.find(params[:id])# this was missing
 	end
 
 	def product_params
